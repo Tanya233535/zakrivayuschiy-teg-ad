@@ -267,7 +267,7 @@
               <p>Сейчас вы уже очень много знаете о вёрстке. Но это только начало. Во-первых, впереди ещё много материала про «красотищу». Во-вторых, с окончанием курса учёба не заканчивается. Вёрстка — это целый мир. И этот мир постоянно меняется. Познать его полностью не получится, но это тот случай, когда важен сам процесс познания. Ведь часто путь — и есть результат.</p>
               <p>Самое время похвалить себя за всю проделанную работу и хорошенько отдохнуть 😎</p>
             </div>
-            <footer class="card__footer">
+             <footer class="card__footer">
               <button
                 aria-labelledby="article_8_like_button"
                 type="button"
@@ -316,8 +316,9 @@
       </ul>
       <button
         type="button"
+        onclick="window.modal.showModal();"
+        aria-controls="modal"
         class="button button--save"
-        id="save-button"
       >
         <svg class="button__icon" viewBox="0 0 29 28">
           <use href="svg/floppy.svg#floppy" />
@@ -332,13 +333,11 @@
         </svg>
         <p>Вставьте дискету, чтобы продолжить</p>
       </div>
-      <button
-        type="button"
-        class="button modal__button"
-        id="close-button"
-      >
-        <span class="button__text">ок</span>
-      </button>
+      <form method="dialog">
+        <button type="submit" class="button modal__button">
+          <span class="button__text">ок</span>
+        </button>
+      </form>
     </dialog>
     <script src="./scripts/like.js"></script>
   </body>
