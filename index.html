@@ -314,47 +314,39 @@
           </article>
         </li>
       </ul>
-      <button type="button" class="button button--save">
+            <button type="button" class="button button--save" id="saveButton">
         <svg class="button__icon" viewBox="0 0 29 28">
           <use href="svg/floppy.svg#floppy" />
         </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
     </main>
-     <dialog class="modal" id="modal">
+      <dialog class="modal" id="modal">
       <div class="modal__content">
         <svg class="modal__icon" viewBox="0 0 29 28">
           <use href="svg/floppy.svg#floppy" />
         </svg>
         <p>Вставьте дискету, чтобы продолжить</p>
       </div>
-      <button type="button" class="button modal__button" id="modalCloseBtn">
-        <span class="button__text">ок</span>
-      </button>
+      <form method="dialog" action="javascript:void(0);" onsubmit="return false;">
+        <button type="submit" class="button modal__button">
+          <span class="button__text">ок</span>
+        </button>
+      </form>
     </dialog>
+        <script src="./scripts/like.js"></script>
         <script src="./scripts/like.js"></script>
     <script>
       (function() {
         const modal = document.getElementById('modal');
-        const saveBtn = document.querySelector('.button--save');
-        const closeBtn = document.getElementById('modalCloseBtn');
+        const saveBtn = document.getElementById('saveButton');
         
         if (saveBtn) {
-          saveBtn.addEventListener('click', function(e) {
+          saveBtn.onclick = function(e) {
             e.preventDefault();
-            e.stopPropagation();
-            if (modal) modal.showModal();
+            modal.showModal();
             return false;
-          });
-        }
-        
-        if (closeBtn) {
-          closeBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            if (modal) modal.close();
-            return false;
-          });
+          };
         }
       })();
     </script>
