@@ -314,12 +314,7 @@
           </article>
         </li>
       </ul>
-      <button
-        type="button"
-        onclick="window.modal.showModal();"
-        aria-controls="modal"
-        class="button button--save"
-      >
+      <button type="button" aria-controls="modal" class="button button--save" onclick="document.getElementById('modal').showModal(); return false;">
         <svg class="button__icon" viewBox="0 0 29 28">
           <use href="svg/floppy.svg#floppy" />
         </svg>
@@ -331,13 +326,11 @@
         <svg class="modal__icon" viewBox="0 0 29 28">
           <use href="svg/floppy.svg#floppy" />
         </svg>
-        <p>Вставьте дискету,чтобы продолжить</p>
+        <p>Вставьте дискету, чтобы продолжить</p>
       </div>
-      <form method="dialog">
-        <button type="submit" class="button modal__button">
-          <span class="button__text">ок</span>
-        </button>
-      </form>
+      <button type="button" class="button modal__button" onclick="document.getElementById('modal').close(); return false;">
+        <span class="button__text">ок</span>
+      </button>
     </dialog>
     <script src="./scripts/like.js"></script>
   </body>
