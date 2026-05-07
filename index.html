@@ -316,8 +316,8 @@
       </ul>
       <button
         type="button"
-        onclick="document.getElementById('modal').showModal();"
         class="button button--save"
+        id="save-button"
       >
         <svg class="button__icon" viewBox="0 0 29 28">
           <use href="svg/floppy.svg#floppy" />
@@ -332,7 +332,11 @@
         </svg>
         <p>Вставьте дискету, чтобы продолжить</p>
       </div>
-      <button type="button" class="button modal__button" onclick="document.getElementById('modal').close();">
+      <button
+        type="button"
+        class="button modal__button"
+        id="close-button"
+      >
         <span class="button__text">ок</span>
       </button>
     </dialog>
