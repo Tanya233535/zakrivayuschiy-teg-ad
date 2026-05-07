@@ -267,7 +267,7 @@
               <p>Сейчас вы уже очень много знаете о вёрстке. Но это только начало. Во-первых, впереди ещё много материала про «красотищу». Во-вторых, с окончанием курса учёба не заканчивается. Вёрстка — это целый мир. И этот мир постоянно меняется. Познать его полностью не получится, но это тот случай, когда важен сам процесс познания. Ведь часто путь — и есть результат.</p>
               <p>Самое время похвалить себя за всю проделанную работу и хорошенько отдохнуть 😎</p>
             </div>
-             <footer class="card__footer">
+              <footer class="card__footer">
               <button
                 aria-labelledby="article_8_like_button"
                 type="button"
@@ -314,41 +314,30 @@
           </article>
         </li>
       </ul>
-            <button type="button" class="button button--save" id="saveButton">
+      <button
+        type="button"
+        onclick="document.getElementById('modal').showModal();"
+        aria-controls="modal"
+        class="button button--save"
+      >
         <svg class="button__icon" viewBox="0 0 29 28">
           <use href="svg/floppy.svg#floppy" />
         </svg>
         <span class="button__text">Сохранить на память</span>
-      </button>
+    </button>
     </main>
-      <dialog class="modal" id="modal">
+    <dialog class="modal" id="modal">
       <div class="modal__content">
         <svg class="modal__icon" viewBox="0 0 29 28">
           <use href="svg/floppy.svg#floppy" />
         </svg>
-        <p>Вставьте дискету, чтобы продолжить</p>
+        <p>Вставьте дискету,чтобы продолжить</p>
       </div>
-      <form method="dialog" action="javascript:void(0);" onsubmit="return false;">
-        <button type="submit" class="button modal__button">
+      <form method="dialog">
+        <button type="button" onclick="window.modal.close();" class="button modal__button">
           <span class="button__text">ок</span>
         </button>
       </form>
-    </dialog>
-        <script src="./scripts/like.js"></script>
-        <script src="./scripts/like.js"></script>
-    <script>
-      (function() {
-        const modal = document.getElementById('modal');
-        const saveBtn = document.getElementById('saveButton');
-        
-        if (saveBtn) {
-          saveBtn.onclick = function(e) {
-            e.preventDefault();
-            modal.showModal();
-            return false;
-          };
-        }
-      })();
-    </script>
+    <script src="./scripts/like.js"></script>
   </body>
 </html>
