@@ -314,7 +314,7 @@
           </article>
         </li>
       </ul>
-      <button type="button" onclick="window['modal'].showModal()" aria-controls="modal" class="button button--save">
+      <button type="button" id="save-button" class="button button--save">
         <svg class="button__icon" viewBox="0 0 29 28">
           <use href="./svg/floppy.svg#floppy" />
         </svg>
@@ -329,11 +329,30 @@
         <p>Вставьте дискету, чтобы продолжить</p>
       </div>
       <form method="dialog">
-        <button type="button" onclick="window['modal'].close()" class="button modal__button">
+        <button type="button" id="modal-close-btn" class="button modal__button">
           <span class="button__text">ОК</span>
         </button>
       </form>
     </dialog>
     <script src="./scripts/like.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const saveBtn = document.getElementById('save-button');
+        const modal = document.getElementById('modal');
+        const closeBtn = document.getElementById('modal-close-btn');
+
+        if (saveBtn) {
+          saveBtn.addEventListener('click', () => {
+            modal.showModal();
+          });
+        }
+
+        if (closeBtn) {
+          closeBtn.addEventListener('click', () => {
+            modal.close();
+          });
+        }
+      });
+    </script>
   </body>
 </html>
